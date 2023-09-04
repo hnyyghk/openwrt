@@ -164,6 +164,14 @@ define Device/redmi_ax6
 endef
 TARGET_DEVICES += redmi_ax6
 
+define Device/redmi_ax6-stock
+	$(call Device/redmi_ax6)
+	DEVICE_VARIANT := (stock layout)
+	KERNEL_SIZE :=
+	ARTIFACTS :=
+endef
+TARGET_DEVICES += redmi_ax6-stock
+
 define Device/xiaomi_ax3600
 	$(call Device/FitImage)
 	$(call Device/UbiFit)
@@ -181,6 +189,14 @@ ifneq ($(CONFIG_TARGET_ROOTFS_INITRAMFS),)
 endif
 endef
 TARGET_DEVICES += xiaomi_ax3600
+
+define Device/xiaomi_ax3600-stock
+	$(call Device/xiaomi_ax3600)
+	DEVICE_VARIANT := (stock layout)
+	KERNEL_SIZE :=
+	ARTIFACTS :=
+endef
+TARGET_DEVICES += xiaomi_ax3600-stock
 
 define Device/xiaomi_ax9000
 	$(call Device/FitImage)
